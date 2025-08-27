@@ -71,9 +71,76 @@ We welcome contributions from the community! To contribute:
 
 1. Fork the repository
 2. Create a new branch (`git checkout -b feature-xyz`)
-3. Commit your changes (`git commit -am 'Add new feature'`)
+3. Commit your changes (`git commit -am 'feat: add new feature'`)
 4. Push to the branch (`git push origin feature-xyz`)
 5. Create a pull request
+
+## Commit message structure
+
+The commit message should be structured as follows:
+
+```
+<type>[optional scope]: [optional gitmoji] <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+Example:
+
+```
+
+feat(auth): ✨ <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+#### Good commits
+
+✅ _`build: add shadcn package`_
+
+✅ _`feat: ✨ add login button`_
+
+✅ _`fix(auth): 🐛 token validation`_
+
+✅ commit message with ! to draw attention to **breaking change**:
+
+✅ _`feat!: send an email to the customer when a product is shipped`_
+
+✅ _`feat(api)!: send an email to the customer when a product is shipped`_
+
+✅ commit message with **description** and **breaking change footer** (BREAKING CHANGE)
+
+```
+feat: allow provided config object to extend other configs
+
+BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+```
+
+✅ message with **multi-paragraph body** and **multiple footers**
+
+```
+fix: prevent racing of requests
+
+Introduce a request id and a reference to latest request. Dismiss
+incoming responses other than from latest request.
+
+Remove timeouts which were used to mitigate the racing issue but are
+obsolete now.
+
+Reviewed-by: Z
+Refs: #123
+```
+
+#### Bad commits
+
+❌ _`Add LOgin BUTTON`_
+
+❌ _`add login button`_
+
+❌ _`commit message that is too large to fit in one commit, this means that the commit has too many changes to describe and you should split it into multiple commits or you require to use a multi-paragraph body and/or footers.`_
 
 ## License
 
